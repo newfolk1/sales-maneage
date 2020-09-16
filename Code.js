@@ -1,8 +1,19 @@
-function doGet() {
+function doGet(e) {
   try {
-    return HtmlService.createHtmlOutputFromFile('sales-list')
-    .setSandboxMode(HtmlService.SandboxMode.IFRAME);  
+    var htmlOutput = HtmlService.createHtmlOutputFromFile('sales-list');
+    Logger.log(SpreadsheetApp.getActiveSpreadsheet());
+    SpreadsheetApp.getUi().showSidebar(htmlOutput);
   } catch(e) {
     Logger.log(e);
   }
+}
+
+function openSidebar() {
+  SpreadsheetApp.getUi().createMenu('My Menu')
+  .addItem('My menu item', 'myFunction')
+  .addSeparator()
+  .addSubMenu(SpreadsheetApp.getUi().createMenu('My sub-menu')
+      .addItem('One sub-menu item', 'mySecondFunction')
+      .addItem('Another sub-menu item', 'myThirdFunction'))
+  .addToUi();
 }
