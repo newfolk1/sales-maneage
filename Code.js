@@ -1,6 +1,8 @@
-function doGet(e) {
+function onOpen(e) {
   try {
     var htmlOutput = HtmlService.createHtmlOutputFromFile('sales-list');
+    return HtmlService.createHtmlOutputFromFile('sales-list')
+    .setSandboxMode(HtmlService.SandboxMode.IFRAME);
     Logger.log(SpreadsheetApp.getActiveSpreadsheet());
     SpreadsheetApp.getUi().showSidebar(htmlOutput);
   } catch(e) {
