@@ -86,3 +86,60 @@ function insertImage() {
     Logger.log(e);
   }
 }
+
+function setStatusColor() {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("DEPO顧客リスト");
+  var datas = spreadsheet.getRange(2, 2, spreadsheet.getLastRow() - 1);
+
+  Logger.log(spreadsheet.getRange(2, 2).getValue());
+
+  for(var i = 2; i < 3; i++) {
+    for(var j = 2; j <= datas.getNumRows(); j++) {
+      var cellValue = spreadsheet.getRange(j, i).getValue();
+      Logger.log(spreadsheet.getRange(j, i));
+      Logger.log(cellValue);
+      if(cellValue == "解約") {
+        spreadsheet.getRange(j, i).setBackground("gray");
+      }
+    }
+  }
+}
+
+
+function setDeadLineColor() {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("DEPO顧客リスト");
+  var datas = spreadsheet.getRange(2, 3, spreadsheet.getLastRow() - 1);
+
+  Logger.log(spreadsheet.getRange(2, 3).getValue());
+
+  for(var i = 3; i < 4; i++) {
+    for(var j = 2; j <= datas.getNumRows(); j++) {
+      var date = spreadsheet.getRange(j, i).getValue();
+      var splittedDate = date.split('~')[1];
+      var limitMonthToDate = new Date(Date.parse(splittedDate));
+      var nowDate = new Date(Date.now());
+      // Logger.log(limitMonthToDate.getMonth() + 1 - nowDate.getMonth() + 1 <= 1);
+      // Logger.log(splittedDate);
+      // Logger.log(limitMonthToDate);
+      // Logger.log(nowDate.getMonth() + 1);
+
+      try {
+        Logger.log(limitMonthToDate.getMonth() + 1 - nowDate.getMonth() + 1 <= 1);
+        Logger.log(limitMonthToDate.getMonth() + 1);
+        Logger.log(nowDate.getMonth() + 1);
+        if(limitMonthToDate.getMonth() + 1 - nowDate.getMonth() + 1 <= 1) {
+          spreadsheet.getRange(j, i).setBackground("red");
+        } else if(limitMonthToDate.getMonth() + 1 == 12) {
+          var nokottatime = limitMonthToDate - nowDate;
+          var nokottatimeMonth = new Date(nokottatime).getMonth() + 1;
+          if (nokottatimeMonth <= 1){
+            spreadsheet.getRange(j, i).setBackground("red");
+          }
+        }
+  
+      } catch(e) {
+        Logger.log(e);
+      }
+    }
+  }
+}
