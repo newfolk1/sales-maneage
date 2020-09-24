@@ -1,5 +1,6 @@
-<html>
+<html lang="ja">
   <head>
+    <meta charset="UTF-8">
     <title></title>
     <style>
       li {
@@ -11,38 +12,34 @@
     </style>
   </head>
   <body>
-    <form class="o-form">
+    <form method="post" action="https://script.google.com/macros/s/AKfycbxw6swJ6XFaS90gYMIRy5zO3nIqzvqPuwVTVF_AvrI_PYd9CaTo/exec" class="o-form">
       <ul>
         <li>
           <label>企業名</label>
-          <input value="" />
+          <input name="name" />
         </li>
         <li>
           <label>URL</label>
-          <input value="" />
+          <input name="url" />
           
         </li>
         <li>
           <label>メールアドレス</label>
-          <input value="" />
+          <input name="mail" />
           
         </li>
         <li>
           <label>業態</label>
-          <select>
-            <option value="">IT・通信</option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+          <select name="category">
+            <option value="1">IT・通信</option>
           </select>          
         </li>
         <li>
           <label>担当</label>
-          <input value="" />
+          <input name="charge" />
         </li>
         <li>
-          <button>
+          <button onclick="google.script.run.doPost()">
             送信
           </button>
         </li>

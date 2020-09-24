@@ -100,6 +100,8 @@ function setStatusColor() {
       Logger.log(cellValue);
       if(cellValue == "解約") {
         spreadsheet.getRange(j, i).setBackground("gray");
+      } else if(cellValue == "進行中") {
+        spreadsheet.getRange(j, i).setBackground("white");      
       }
     }
   }
@@ -124,7 +126,7 @@ function setDeadLineColor() {
       // Logger.log(nowDate.getMonth() + 1);
 
       try {
-        Logger.log(limitMonthToDate.getMonth() + 1 - nowDate.getMonth() + 1 <= 1);
+        Logger.log(limitMonthToDate.getMonth() + 1 - nowDate.getMonth() + 1);
         Logger.log(limitMonthToDate.getMonth() + 1);
         Logger.log(nowDate.getMonth() + 1);
         if(limitMonthToDate.getMonth() + 1 - nowDate.getMonth() + 1 <= 1) {
@@ -141,5 +143,29 @@ function setDeadLineColor() {
         Logger.log(e);
       }
     }
+  }
+}
+
+function doPost(e) {
+  try {
+    Logger.log(params);
+
+    var params = JSON.parse(e.postData.getDataAsString());  // ※
+    var value = params.value;
+    Logger.log(value);
+    //var spreadsheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+   
+
+    // var postdata = JSON.parse(e.postData.getDataAsString()); 
+    // var name = postdata.parameters.name;
+    // var url = postdata.parameters.url;
+    // var mail = postdata.parameters.mail;
+    // var category = postdata.parameters.category;
+    // var charge = postdata.parameters.charge;
+    // var arr = [name, url, mail, category, charge];
+    // spreadsheet.appendRow(arr);
+    SpreadsheetApp.flush();
+  } catch(ee) {
+    Logger.log(ee);
   }
 }
