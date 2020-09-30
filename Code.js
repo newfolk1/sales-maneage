@@ -164,7 +164,7 @@ function insertCorporateDataWithImage() {
 
       if (targetCellForName.getValue() === "") {
         var folderName = activeFoldersArr[i].getName();
-        var corporateName = folderName.match(/DEPO_ヒアリングシート_(.+)\(File responses\)/)[1];
+        var corporateName = folderName.match(/DEPO_(.+)/)[1];
         activeSheet.setCurrentCell(targetCellForName).setValue(corporateName);  
       }
       
@@ -274,13 +274,13 @@ function setDeadLineColor() {
         // Logger.log(limitMonthToDate.getMonth() + 1 - nowDate.getMonth() + 1);
         // Logger.log(limitMonthToDate.getMonth() + 1);
         // Logger.log(nowDate.getMonth() + 1);  
-        Logger.log('0 '+limitMonthToDate_0.getMonth());
+        Logger.log(limitMonthToDate_0);
         Logger.log('1 '+limitMonthToDate_0.getMonth());
         Logger.log('2 '+limitMonthToDate_0.getMonth() + 1 - limitMonthToDate_1.getMonth() + 1 <= 1);
         Logger.log('3 '+limitMonthToDate_1.getMonth() + 1 == 12);
-        if(limitMonthToDate.getMonth() + 1 - nowDate.getMonth() + 1 <= 1) {
+        if(limitMonthToDate_1.getMonth() + 1 - nowDate.getMonth() + 1 <= 1) {
           spreadsheet.getRange(j, i).setBackground("red");
-        } else if(limitMonthToDate.getMonth() + 1 == 12) {
+        } else if(limitMonthToDate_1.getMonth() + 1 == 12) {
           var nokottatime = limitMonthToDate - nowDate;
           var nokottatimeMonth = new Date(nokottatime).getMonth() + 1;
           if (nokottatimeMonth <= 1){
