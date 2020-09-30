@@ -12,38 +12,140 @@
     </style>
   </head>
   <body>
-    <form method="post" action="https://script.google.com/macros/s/AKfycbxw6swJ6XFaS90gYMIRy5zO3nIqzvqPuwVTVF_AvrI_PYd9CaTo/exec" class="o-form">
+    <form method="post" id="salesForm" action="https://script.google.com/macros/s/AKfycbxw6swJ6XFaS90gYMIRy5zO3nIqzvqPuwVTVF_AvrI_PYd9CaTo/exec" class="o-form">
       <ul>
         <li>
           <label>企業名</label>
-          <input name="name" />
+          <input name="company_name" />
         </li>
         <li>
           <label>URL</label>
-          <input name="url" />
-          
+          <input name="url" />  
         </li>
         <li>
           <label>メールアドレス</label>
-          <input name="mail" />
-          
+          <input name="mail" />  
         </li>
         <li>
           <label>業態</label>
           <select name="category">
-            <option value="1">IT・通信</option>
-          </select>          
+            <option value="農業">
+            農業
+            </option>
+            <option value="林業">
+            林業
+            </option>
+            <option value="漁業">
+            漁業
+            </option>
+            <option value="鉱業">
+            鉱業
+            </option>
+            <option value="採石業砂利採取業">
+            採石業砂利採取業
+            </option>
+            <option value="建設業">
+            建設業
+            </option>
+            <option value="製造業">
+            製造業
+            </option>
+            <option value="電気・ガス・熱供給・水道業">
+            電気・ガス・熱供給・水道業
+            </option>
+            <option value="情報通信業">
+            情報通信業
+            </option>
+            <option value="運輸業">
+            運輸業
+            </option>
+            <option value="郵便業">
+            郵便業
+            </option>
+            <option value="卸売業">
+            卸売業
+            </option>
+            <option value="小売業">
+            小売業
+            </option>
+            <option value="金融業">
+            金融業
+            </option>
+            <option value="保険業">
+            保険業
+            </option>
+            <option value="不動産業">
+            不動産業
+            </option>
+            <option value="物品賃貸業">
+            物品賃貸業
+            </option>
+            <option value="学術研究">
+            学術研究
+            </option>
+            <option value="専門・技術サービス業">
+            専門・技術サービス業
+            </option>
+            <option value="宿泊業">
+            宿泊業
+            </option>
+            <option value="飲食サービス業">
+            飲食サービス業
+            </option>
+            <option value="生活関連サービス業">
+            生活関連サービス業
+            </option>
+            <option value="娯楽業">
+            娯楽業
+            </option>
+            <option value="教育">
+            教育
+            </option>
+            <option value="学習支援業">
+            学習支援業
+            </option>
+            <option value="医療">
+            医療
+            </option>
+            <option value="福祉">
+            福祉
+            </option>
+            <option value="複合サービス事業">
+            複合サービス事業
+            </option>
+            <option value="サービス業">
+            サービス業
+            </option>
+            <option value="公務">
+            公務
+            </option>
+            <option value="分類不能の産業">
+            分類不能の産業
+            </option>          
+          </select>            
         </li>
         <li>
           <label>担当</label>
-          <input name="charge" />
-        </li>
-        <li>
-          <button onclick="google.script.run.doPost()">
-            送信
-          </button>
+          <select name="charge_person">
+            <option value="未設定">
+              未設定
+            </option>
+            <option value="本多">
+              本多
+            </option>
+            <option value="赤羽根">
+              赤羽根
+            </option>
+            <option value="木邉">
+              木邉
+            </option>
+            <option value="纐纈">
+              纐纈
+            </option>
+          </select>  
         </li>
       </ul>
+      <button onclick="google.script.run.insertSalesFormData(this.parentNode)">送信</button>
     </form>
   </body>
 </html>

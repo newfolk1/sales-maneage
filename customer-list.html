@@ -12,70 +12,184 @@
     </style>
   </head>
   <body>
-    <form class="o-form" method="post" action="https://script.google.com/macros/s/AKfycbzFHzCcUS6nS71IDvtuvcNTTsYDgDQRziRWPvC4Ww/exec">
+    <form class="o-form" method="post" action="https://script.google.com/macros/s/AKfycbxw6swJ6XFaS90gYMIRy5zO3nIqzvqPuwVTVF_AvrI_PYd9CaTo/exec">
       <ul>
         <li>
-          <label>社名</label>
-          <input value="" />
+          <label>企業名</label>
+          <input name="company_name" placeholder="" />
         </li>
         <li>
           <label>申し込み形式</label>
-          <input value="" />
-          
+          <select name="introduction_source">
+            <option value="未設定">
+              未設定
+            </option>
+            <option value="DM">
+              DM
+            </option>
+            <option value="リスティング">
+              リスティング
+            </option>
+            <option value="メールリスト">
+              メールリスト
+            </option>
+            <option value="不明">
+              不明
+            </option>
+          </select>
         </li>
         <li>
           <label>Google Drive</label>
-          <input value="" />
+          <input name="drive_link" placeholder="https://drive.google.com/drive/u/0/folders/0B_loR2s0kRusfnE0V3RPY0tKVXNmR1gyNDljeFZING9zYk9lSmg4Uk83NWZJSVFZdlVlMjA" />
         </li>
         <li>
           <label>Slack ID</label>
-          <select>
-            <option value="">IT・通信</option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-          </select>          
+          <input name="slack_id" placeholder="depo.subscription@gmail.com" />
         </li>
         <li>
           <label>Slack Password</label>
-          <input value="" />
+          <input name="slack_pass" placeholder="depo2020_" />
         </li>
         <li>
           <label>契約期間</label>
-          <input value="" />
+          <input name="contract_period" placeholder="2020.４.1〜6.30" />
         </li>
         <li>
           <label>業態</label>
-          <input value="" />
+          <select name="category">
+            <option value="農業">
+            農業
+            </option>
+            <option value="林業">
+            林業
+            </option>
+            <option value="漁業">
+            漁業
+            </option>
+            <option value="鉱業">
+            鉱業
+            </option>
+            <option value="採石業砂利採取業">
+            採石業砂利採取業
+            </option>
+            <option value="建設業">
+            建設業
+            </option>
+            <option value="製造業">
+            製造業
+            </option>
+            <option value="電気・ガス・熱供給・水道業">
+            電気・ガス・熱供給・水道業
+            </option>
+            <option value="情報通信業">
+            情報通信業
+            </option>
+            <option value="運輸業">
+            運輸業
+            </option>
+            <option value="郵便業">
+            郵便業
+            </option>
+            <option value="卸売業">
+            卸売業
+            </option>
+            <option value="小売業">
+            小売業
+            </option>
+            <option value="金融業">
+            金融業
+            </option>
+            <option value="保険業">
+            保険業
+            </option>
+            <option value="不動産業">
+            不動産業
+            </option>
+            <option value="物品賃貸業">
+            物品賃貸業
+            </option>
+            <option value="学術研究">
+            学術研究
+            </option>
+            <option value="専門・技術サービス業">
+            専門・技術サービス業
+            </option>
+            <option value="宿泊業">
+            宿泊業
+            </option>
+            <option value="飲食サービス業">
+            飲食サービス業
+            </option>
+            <option value="生活関連サービス業">
+            生活関連サービス業
+            </option>
+            <option value="娯楽業">
+            娯楽業
+            </option>
+            <option value="教育">
+            教育
+            </option>
+            <option value="学習支援業">
+            学習支援業
+            </option>
+            <option value="医療">
+            医療
+            </option>
+            <option value="福祉">
+            福祉
+            </option>
+            <option value="複合サービス事業">
+            複合サービス事業
+            </option>
+            <option value="サービス業">
+            サービス業
+            </option>
+            <option value="公務">
+            公務
+            </option>
+            <option value="分類不能の産業">
+            分類不能の産業
+            </option>          
+          </select>    
         </li>
         <li>
           <label>担当</label>
-          <input value="" />
+          <input name="company_charge_person" placeholder="" />
         </li>
         <li>
           <label>弊社担当</label>
-          <input value="" />
+          <select name="charge_person">
+            <option value="未設定">
+              未設定
+            </option>
+            <option value="本多">
+              本多
+            </option>
+            <option value="赤羽根">
+              赤羽根
+            </option>
+            <option value="木邉">
+              木邉
+            </option>
+            <option value="纐纈">
+              纐纈
+            </option>
+          </select>  
         </li>
         <li>
           <label>案件名</label>
-          <input value="" />
+          <input name="project_title" placeholder="" />
         </li>
         <li>
           <label>制作物＆作業期間</label>
-          <input value="" />
+          <input name="printing_requirement_and_start_date" placeholder="2020_04_カンカク_メニュー更新" />
         </li>
         <li>
           <label>印刷仕様</label>
-          <input value="" />
-        </li>
-
-        <li>
-          <button>
-            送信
-          </button>
+          <textarea name="printing_specification" placeholder="ポストカード/マットコート220kg/両面カラー/500枚（最速納品）"></textarea>
         </li>
       </ul>
+      <button onclick="google.script.run.insertCustomerFormData(this.parentNode)">送信</button>
     </form>
   </body>
 </html>

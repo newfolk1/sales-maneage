@@ -16,37 +16,60 @@
       <ul>
         <li>
           <label>企業名</label>
-          <input value="" />
+          <input name="company_name" />
         </li>
         <li>
-          <label>導入元</label>
-          <input value="" />
-          
+          <label>申し込み形式</label>
+          <select name="introduction_source">
+            <option value="未設定">
+              未設定
+            </option>
+            <option value="DM">
+              DM
+            </option>
+            <option value="リスティング">
+              リスティング
+            </option>
+            <option value="メールリスト">
+              メールリスト
+            </option>
+            <option value="不明">
+              不明
+            </option>
+          </select>       
         </li>
         <li>
           <label>問い合わせ日</label>
-          <input value="" />
+          <input name="contact_date" placeholder="2020/05/15" />
           
         </li>
         <li>
           <label>MTG</label>
-          <input value="" />
+          <input name="mtg_day" placeholder="2020/05/15" />
         </li>
         <li>
           <label>担当者</label>
-          <select>
-            <option value="">IT・通信</option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-          </select>          
+          <select name="charge_person">
+            <option value="未設定">
+              未設定
+            </option>
+            <option value="本多">
+              本多
+            </option>
+            <option value="赤羽根">
+              赤羽根
+            </option>
+            <option value="木邉">
+              木邉
+            </option>
+            <option value="纐纈">
+              纐纈
+            </option>
+          </select>  
+         
         </li>
-        <li>
-          <button>
-            送信
-          </button>
-        </li>
+        <button onclick="google.script.run.insertReactedCustomerFormData(this.parentNode)">送信</button>
+
       </ul>
     </form>
   </body>
